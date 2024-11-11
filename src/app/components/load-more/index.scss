@@ -1,0 +1,11 @@
+.pallas-load-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.26rem;
+    color: #999;
+
+    .loading-tips{
+        margin-left: 0.1rem;
+    }
+}
