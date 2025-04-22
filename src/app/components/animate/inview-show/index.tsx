@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 
 import { useEffect, useRef } from "react";
-import { useAnimate, useInView,motion} from "framer-motion"
+import { useAnimate, useInView} from "framer-motion"
 
 export const InviewShow = ({once = true, children} : {once?: boolean, children: ReactNode}) => {
 
