@@ -12,9 +12,9 @@ export const getSearchParams = (headers: ReadonlyHeaders, p: string): string => 
 }
 
 // 为url添加请求参数 http
-export const appendParamsToUrl = (url: string, params: { [key: string]: any }): string => {
+export const appendParamsToUrl = (url: string, params: { [key: string]: string | number | boolean }): string => {
     const urlObj = new URL(url, 'http://example.com'); // 基于基准 URL 解析
-    Object.keys(params).forEach(key => urlObj.searchParams.append(key, params[key]));
+    Object.keys(params).forEach(key => urlObj.searchParams.append(key, String(params[key])));
     return urlObj.pathname + urlObj.search;
 };
 
@@ -35,7 +35,7 @@ export const generateUUID = () => {
     let uuid = '', i, random;
     for (i = 0; i < 32; i++) {
       random = Math.random() * 16 | 0;
-  
+
       if (i === 8 || i === 12 || i === 16 || i === 20) {
         uuid += '-';
       }
