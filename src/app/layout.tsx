@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { DeviceProvider } from "@/app/context/device-context";
+import { LoadingMask } from "@/app/components/loading-mask";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <LoadingMask />
+        <DeviceProvider>
+            {children}
+        </DeviceProvider>
       </body>
     </html>
   );
