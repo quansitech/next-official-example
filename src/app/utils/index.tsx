@@ -18,7 +18,7 @@ export const appendParamsToUrl = (url: string, params: { [key: string]: string |
     return urlObj.pathname + urlObj.search;
 };
 
-export const api = async (url: string, options?: {}) => {
+export const api = async (url: string, options?: object) => {
     const baseUrl = process.env.BASE_URL || process.env.NEXT_PUBLIC_BASE_URL;
     const res = await fetch(`${baseUrl}${url}`, { ...(options || {cache: 'no-store'})});
     const body = await res.json();

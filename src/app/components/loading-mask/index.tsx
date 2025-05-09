@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion} from "framer-motion"
+import {Image} from "@/app/components/image"
 import "./index.scss"
 export const LoadingMask = () => {
     const [inited, setInited] = useState(false)
@@ -18,7 +19,7 @@ export const LoadingMask = () => {
             }}
             exit={{ opacity: 0 }}
             >
-            <img src="/favicon.ico" alt="Loading..." className="loading-favicon" />
+            <Image src="/favicon.ico" alt="Loading..." className="loading-favicon" />
         </motion.div>
     }</AnimatePresence>
 }
