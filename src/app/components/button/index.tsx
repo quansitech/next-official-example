@@ -4,7 +4,7 @@ import type {ReactNode} from "react";
 
 import "./index.scss";
 
-export const Button = ({children, suffix = null, type = "flat", onClick = () => {}}: {children: string, suffix?: ReactNode, type?: "flat" | "circle", onClick?: Function}) => {
+export const Button = ({children, suffix = null, type = "flat", onClick = () => {}}: {children: string, suffix?: ReactNode, type?: "flat" | "circle", onClick?: () => void;}) => {
 
     let className = "btn";
     if(type === 'circle'){
